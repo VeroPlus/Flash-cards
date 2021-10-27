@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash Cards 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu">
+        <h1>Flash cards</h1>
+        <div id="button-container">
+            <button id="create-button" onclick="activeWindow();">New card</button>
+            <button id="show-button" onclick="showCards();">Show cards</button>
+        </div>
+    </div>
+    <div class="window" id="creat-card">
+        <div class="overlay"></div>
+        <div class="content">
+            <button id="close-button" onclick="activeWindow();">&times;</button>
+            <h1>Enter your question and answer</h1>
+            <div id="question-form">
+                <p class="text">Your question</p>
+                <input type="text" id="question">
+            </div>
+            <div id="answer-form">
+                <p class="text">Your answer</p>
+                <input type="text" id="answer">
+            </div>
+            <button id="save-button" onclick="saveCard();">Save</button>
+        </div>
+    </div>
+   <div class="flashcards"></div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

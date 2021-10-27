@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+h1{
+    color: #333;
+    font-family: 'Nanum Gothic', sans-serif;
+    margin: 30px;
+}
+ 
+/*Menu style*/
+#main-menu{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+#button-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+#button-container>button{
+    background-color: #f5f5f5;
+    border-color: #C9C9C9;
+    border-radius: 15px;
+    color: #333;
+    font: bold medium  'Nanum Gothic', sans-serif;
+    height: 40px;
+    transition: background-color 0.1ms ease;
+    width: 100px;
+}
+
+#button-container>button:active{
+    background-color: #ACACAC;
+}
+
+/*Create box style*/
+.window .overlay{
+    background: rgba(0, 0, 0, .5);
+    display: none;height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+    
+.window .content {
+    background:#f5f5f5;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-around;
+    left: 50%;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 600px;
+    z-index: 2;
+}
+    
+.window #close-button{
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-size: 25px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    transition: background-color 0.1ms ease;
+    top: 20px;
+    width: 30px;
+}
+
+.window #close-button:active{
+    background-color: #ACACAC;
+}
+
+    
+#question-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+    
+#answer-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+    
+.text{
+    color: #333;
+    font: bold medium  'Nanum Gothic', sans-serif;
+    margin: 0 15px;
+} 
+    
+#save-button{
+    background-color: #f5f5f5;
+    border-color: #C9C9C9;
+    border-radius: 15px;
+    color: #333;
+    font: bold medium  'Nanum Gothic', sans-serif;    
+    height: 40px;
+    margin-left: 450px;
+    transition: background-color 0.1ms ease;
+    width: 100px;        
+}
+
+#save-button:active{
+    background-color: #ACACAC;
+}
+    
+.window.active .overlay{
+    display: block;
+}
+    
+.window.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/*Create flash-card style*/
+.flashcards {
+    border-top: 10px double grey;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: safe;
+    margin-top: 15px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.flashcard {
+    background-color: white;
+    border-radius: 10%;
+    height: 190px;
+    margin: 10px 20px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    width: 380px;
+    word-wrap: break-word;
+}
+
+.delete-button{
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    position: absolute;
+    font-size: 25px;
+    height: 30px;
+    right: 20px;
+    text-align: center;
+    top: 20px;
+    transition: background-color 0.1ms ease;
+    width: 30px;
+}
+
+.delete-button:active{
+    background-color: #ACACAC;
+}
+
+
+.flashcard.active{
+  transform: rotateY(180deg);
+}
+
+.front-side{
+    background: white; 
+    backface-visibility: hidden;
+    border-radius: 10px;
+    color: #000;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    text-align: center;  
+    width: 100%;
+} 
+
+.back-side{
+    background: #E6E6E6;
+    backface-visibility: hidden; 
+    border-radius: 10px;
+    color: #333;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: rotateY(180deg);
+    width: 100%;  
+}
+
+.card-text{
+    font: 38px 'Caveat', cursive;
+    line-height: 150px;
+}
